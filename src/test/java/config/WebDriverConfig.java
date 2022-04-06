@@ -2,11 +2,10 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/${properties}.properties")
+@Config.Sources("classpath:.properties")
 public interface WebDriverConfig extends Config{
 
     @Config.Key("browserName")
-        //  @DefaultValue("Chrome")
     String browserName();
 
     @Config.Key("browserVersion")
