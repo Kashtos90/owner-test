@@ -2,7 +2,7 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:.properties")
+@Config.Sources("classpath:${typeProperties}.properties")
 public interface WebDriverConfig extends Config{
 
     @Config.Key("browserName")
