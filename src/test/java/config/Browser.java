@@ -1,8 +1,20 @@
 package config;
 
-public enum Browser {
+import org.aeonbits.owner.ConfigFactory;
 
-    FIREFOX,
+public class Browser {
 
-    CHROME
+    public static WebDriverConfig webConfig = (WebDriverConfig) ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+
+    public static boolean isRemoteWebDriver() {
+        return !webConfig.remoteUrl().equals("");
+    }
+
+    public static boolean isVideoOn() {
+        return !webConfig.videoStorage().equals("");
+    }
+
+    public static String browserName() {
+        return webConfig.browserName();
+    }
 }

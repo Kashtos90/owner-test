@@ -1,20 +1,29 @@
 package config;
 
-public class WebDriverConfig {
+import org.aeonbits.owner.Config;
 
-    public String getBaseUrl() {
-        return "https://github.com";
-    }
+@Config.Sources("classpath:config/${properties}.properties")
+public interface WebDriverConfig extends Config{
 
-    public Browser getBrowser() {
-        return Browser.CHROME;
-    }
+    @Config.Key("browserName")
+        //  @DefaultValue("Chrome")
+    String browserName();
 
-    public boolean isRemote() {
-        return false;
-    }
+    @Config.Key("browserVersion")
+    String browserVersion();
 
-    public String getRemoteUrl() {
-        return "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-    }
+    @Config.Key("browserSize")
+    String browserSize();
+
+    @Config.Key("remoteUrl")
+    String remoteUrl();
+
+    @Config.Key("videoStorage")
+    String videoStorage();
+
+    @Config.Key("timeoutVideoAttach")
+    int timeoutVideoAttach();
+
+    @Config.Key("timeout")
+    int timeout();
 }
