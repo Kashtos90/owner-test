@@ -14,9 +14,9 @@ public class WebTest extends TestBase {
         });
 
         step("Вводим поисковый запрос", () -> {
-            $("[data-test-selector='nav-search-input']").setValue("Kashtos90").pressEnter();
-            $$("ul.repo-list").first().shouldHave(text("Kashtos90"));
-            sleep(1000);
+            $("[data-test-selector='nav-search-input']").setValue("owner-test").pressEnter();
+            $$("ul.repo-list").first().shouldHave(text("owner-test"));
+            sleep(10000);
         });
     }
 }
